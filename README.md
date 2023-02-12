@@ -61,7 +61,7 @@ Contém todas as atividades desenvolvidas por __[Natalia Ribeiro](https://www.li
 - [ ] 7.6 - Projeto - Zoo functions
 
 
-## Front-end
+## Front-end :art:
 
 ##### Seção 1: [1. Introdução ao Frontend e JavaScript assíncrono]()
 - [ ] 1.1 - Ambiente e desenvolvimento
@@ -116,7 +116,7 @@ Contém todas as atividades desenvolvidas por __[Natalia Ribeiro](https://www.li
 - [ ] 10.1 - Projeto - App de Receitas -->
 
 
-## Desenvolvimento Back-end 
+## Desenvolvimento Back-end :open_file_folder:
 
 ##### Seção 1: [Docker: utilizando containers]()
 - [ ] 1.1 - Utilizando Containers
@@ -194,7 +194,7 @@ Contém todas as atividades desenvolvidas por __[Natalia Ribeiro](https://www.li
 - [ ] 13.1 - Projeto - App de Delivery
 
 
-## Ciência da Computação
+## Ciência da Computação :computer:
 
 ##### Seção 1: [Introdução à Python]() 
 - [ ] 1.1 - Aprendendo Python
