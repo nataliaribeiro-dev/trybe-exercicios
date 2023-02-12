@@ -151,30 +151,30 @@ Contém todas as atividades desenvolvidas por __[Natalia Ribeiro](https://www.li
 - [ ] 5.3 - Arquitetura de Software: Camada Controller
 - [ ] 5.4 - Projeto - Store Manager
 
-##### Seção 6: [Node.js: ORM e Autenticação] ()
+##### Seção 6: [Node.js: ORM e Autenticação]()
 - [ ] 6.1 - ORM - Interface de aplicação de banco de dados
 - [ ] 6.2 - ORM - Associations 1:1 e 1:N
 - [ ] 6.3 - ORM - Associations N:N e Transactions
 - [ ] 6.4- JWT - (JSON Web Token)
 - [ ] 6.5 - Projeto - Store API de blogs
 
-##### Seção 7: [MASTERCLASS: Implantação de Aplicações na nuvem] ()
+##### Seção 7: [MASTERCLASS: Implantação de Aplicações na nuvem]()
 - [ ] 7.1 - Infraestrutura: Deploy com Railway
 
-##### Seção 8: [Introdução a TypeScript] ()
+##### Seção 8: [Introdução a TypeScript]()
 - [ ] 8.1 - Introdução ao TypeScript
 - [ ] 8.2 - Tipagem estática e Generics
 - [ ] 8.3 - Express com TypeScript
 - [ ] 8.4 - Projeto - Trybesmith
 
-##### Seção 9: [POO e SOLID] ()
+##### Seção 9: [POO e SOLID]()
 - [ ] 9.1 - Introdução à Orientação a Objetos
 - [ ] 9.2 - Herança e Composição
 - [ ] 9.3 - Polimorfismo
 - [ ] 9.4- Princípios L e I
 - [ ] 9.5 - Projeto - Trybers and Dragons
 
-##### Seção 10: [Projeto - TFC] ()
+##### Seção 10: [Projeto - TFC]()
 - [ ] 10.1 - Projeto - TFC - Trybe Futebol Clube
 
 ##### Seção 11: [Introdução ao MongoDB]()
@@ -190,7 +190,7 @@ Contém todas as atividades desenvolvidas por __[Natalia Ribeiro](https://www.li
 - [ ] 12.2 - APIs OO e NoSQL: Herança e Abstração
 - [ ] 12.3 - Projeto - Car Shop
 
-##### Seção 13: [App de Delivery] ()
+##### Seção 13: [App de Delivery]()
 - [ ] 13.1 - Projeto - App de Delivery
 
 
