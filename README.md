@@ -13,7 +13,7 @@ Contém todas as atividades desenvolvidas por __[Natalia Ribeiro](https://www.li
 - [x] 1.3 - Git & GitHub - Entendendo os comandos
 
 ##### Seção 2: [Introdução a HTML e& CSS](https://github.com/nataliaribeiro-dev/trybe-exercicios/tree/main/fundamentos/secao-02-intro-html-css)
-- [ ] 2.1 - HTML & CSS - Estruturas de página
+- [x] 2.1 - HTML & CSS - Estruturas de página
 - [ ] 2.2 - HTML & CSS - Primeiros passos em CSS
 - [ ] 2.3 - HTML & CSS - Seletores e posicionamento
 - [ ] 2.4 - HTML Semântico
