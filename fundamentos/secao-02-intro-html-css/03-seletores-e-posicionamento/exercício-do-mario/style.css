@@ -1,0 +1,44 @@
+
+
+/* Configurado para uma tela wide-screen */
+
+.super-mario {
+    width: 180px;
+    position: absolute;
+    left: 200px;
+
+
+
+  }
+
+  .goomba {
+    width: 100px;
+    position: absolute;
+    left: 300px;
+    bottom: 180px;
+  }
+
+  .baloon {
+  position: absolute;
+  left: 490px;
+  top: 120px;
+  z-index: 1;
+
+  }
+
+  .speach {
+    font-size: 25px;
+    position: absolute;
+    left: 510px;
+    top: 170px;
+    z-index: 2;
+  }
+
+  .bowser {
+    width: 200px;
+    position: absolute;
+    left: 800px;
+    bottom: 220px;
+  } */
+
+
