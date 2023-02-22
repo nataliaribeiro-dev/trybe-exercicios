@@ -14,10 +14,10 @@ Contém todas as atividades desenvolvidas por __[Natalia Ribeiro](https://www.li
 
 ##### Seção 2: [Introdução a HTML e& CSS](https://github.com/nataliaribeiro-dev/trybe-exercicios/tree/main/fundamentos/secao-02-intro-html-css)
 - [x] 2.1 - HTML & CSS - Estruturas de página
-- [ ] 2.2 - HTML & CSS - Primeiros passos em CSS
-- [ ] 2.3 - HTML & CSS - Seletores e posicionamento
-- [ ] 2.4 - HTML Semântico
-- [ ] 2.5 - Projeto - Lessons Learned
+- [X] 2.2 - HTML & CSS - Primeiros passos em CSS
+- [x] 2.3 - HTML & CSS - Seletores e posicionamento
+- [x] 2.4 - HTML Semântico
+- [x] 2.5 - Projeto - Lessons Learned
 
 ##### Seção 3: [Introdução a JavaScript](https://github.com/nataliaribeiro-dev/trybe-exercicios/tree/main/fundamentos/secao-03-intro-js)
 - [ ] 3.1 - JavaScript - Primeiros passos
