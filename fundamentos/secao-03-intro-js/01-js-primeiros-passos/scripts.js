@@ -54,3 +54,14 @@ if (firstValue > secondValue && thirdValue) {
     console.log(message);
 }
 
+//Utilize if/else para escrever um código que, dado um valor recebido como parâmetro, retorne: “positive”, se esse valor for positivo; “negative”, se esse valor for negativo, e “zero”, caso esse valor não seja nem positivo nem negativo.
+
+let parameter = 3;
+
+if (parameter > 0) {
+    console.log('Positivo')
+} else if(parameter < 0) {
+    console.log('Negativo')
+} else if (parameter === 0) {
+    console.log ('Zero')
+}
