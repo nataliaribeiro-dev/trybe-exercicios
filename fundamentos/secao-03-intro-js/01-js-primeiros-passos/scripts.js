@@ -23,3 +23,15 @@ console.log(division = (10 / 8));
 let remainder = (a % b);
 console.log(módulo = (10 % 8));
 
+//Utilize if/else para escrever um código que retorne o maior de dois números. Defina, no começo do seu código, duas variáveis com os valores que serão comparados.
+
+let firstValue = 17;
+let secondValue = 48;
+
+if (firstValue > secondValue) {
+    console.log(firstValue + ' ' + 'is bigger than' + ' ' + secondValue + '.')
+} else if (secondValue > firstValue) {
+    console.log (secondValue + ' ' + 'is bigger than' + ' ' + firstValue + '.')
+} else {
+    console.log('Invalid value.')
+}
