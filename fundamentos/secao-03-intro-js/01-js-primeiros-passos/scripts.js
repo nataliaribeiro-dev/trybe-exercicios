@@ -62,6 +62,77 @@ if (parameter > 0) {
     console.log('Positivo')
 } else if(parameter < 0) {
     console.log('Negativo')
-} else if (parameter === 0) {
+} else if (parameter == 0) {
     console.log ('Zero')
 }
+
+// Utilize if/else para escrever um código que defina três variaveis com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false, caso contrário. Se algum ângulo for inválido, você deve retornar uma mensagem de erro.
+//Para os ângulos serem de um triângulo válido, a soma dos três deve ser 180 graus.
+
+//Um ângulo será considerado inválido se não tiver um valor positivo.
+
+let sideA = 20;
+let sideB = 90;
+let sideC = 60;
+let sum = (sideA + sideB + sideC);
+
+if (sum == 180) {
+    console.log('True');
+} else if (sum < 180) {
+    console.log('False')
+} else {
+    console.log('Error!')
+}
+
+//Utilize switch/case para escrever um código que receba o nome de uma peça de xadrez e retorne os movimentos que ela pode fazer.
+//Como desafio, escreva um código para funcionar tanto se receber o nome de uma peça com letras maiúsculas quanto com letras minúsculas, sem aumentar a quantidade de condicionais.
+
+//Como dica, você pode pesquisar uma função que faça uma string ficar com todas as letras minúsculas (lower case).
+
+//Se a peça passada for inválida, o código deve retornar uma mensagem de erro.
+
+//Exemplo: bishop (bispo) -> diagonals (diagonais)
+
+//You need to be calling toLowerCase() on the question, not on the values question is being compared to. That way if the user types "GrEaT" it will be converted to "great" before being checked against your string literals.
+// toLowerCase is a method. So it must be called with () at the end. If you're calling the method on variable 'x', your code would be x.toLowerCase().
+// The case conditions also need to be in lowercase so that they'll match the lowercase question, for instance "Great" needs to be "great".
+
+let answer;
+let question = prompt('Please, name one chess piece?').toLowerCase();
+
+switch (question) {
+    case 'pawn':
+        answer = 'This chess piece can move square diagonally to the left or right.'; 
+        alert(answer);
+        break
+
+    case 'bishop':
+        answer = 'This chess piece can move diagonally as many squares as it likes.'; 
+        alert(answer);
+
+    case 'knight':
+        answer = 'This chess piece can move one square left or right horizontally and then two squares up or down vertically.'; 
+        alert(answer);
+        break
+
+    case 'rook':
+        answer = 'This chess piece can move as many squares as it likes left or right horizontally, or as many squares as it likes up or down vertically.'; 
+        alert(answer);
+        break
+
+    case 'queen':
+        answer = 'This chess piece can move like a rook and a bishop combined.'; 
+        alert(answer);
+        break
+
+    case 'king':
+        answer = 'This chess piece can only move one square in any direction.'; 
+        alert(answer);
+        break
+
+    default:
+        answer = 'Error!';
+        alert ('Erro! Tente novamente.')
+}
+
+
