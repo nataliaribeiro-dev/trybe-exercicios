@@ -223,3 +223,40 @@ if (valorVenda > 0 && valorCusto > 0) {
 } else if (valorVenda < 0 || valorCusto < 0) {
     console.log('Erro! Operação encerrada.')
 }
+
+// Utilize if/else para escrever um código que, dado um salário bruto, calcule o líquido a ser recebido.
+
+let salBruto = 3000.00;
+
+let inss;
+let calculoIr;
+
+if (salBruto <= 1556.94) {
+    inss = salBruto * 0.08;
+}else if (salBruto <= 2594.92) {
+    inss = salBruto * 0.09; 
+}else if (salBruto <= 5189.82) {
+    inss = salBruto * 0.11; 
+}else {
+    inss = 570.88
+}
+
+console.log(inss);
+
+let salBase = salBruto - inss;
+
+if (salBase <= 1903.98) {
+    calculoIr = 0;
+}else if (salBase <= 2826.65) {
+    calculoIr = (salBase * 0.075) - 142.80;
+}else if (salBase <= 3751.05) {
+    calculoIr = (salBase * 0.15) - 354.80;
+}else if (salBase <= 4664.68) {
+    calculoIr = (salBase * 0.225) - 636.13;
+}else {
+    calculoIr = (salBase * 0.275) - 869.36;
+}
+
+console.log('O salário líquido será de:' + ' ' + (salBase - calculoIr) + '.');
+
+
