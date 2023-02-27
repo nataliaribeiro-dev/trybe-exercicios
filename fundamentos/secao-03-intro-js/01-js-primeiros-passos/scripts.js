@@ -178,11 +178,24 @@ if (nota >= 90) {
 // Utilize if/else para escrever um código que defina três números em variáveis e retorne true se pelo menos uma das três for par. Caso contrário, o código deve retornar false.
 // Bônus: use somente um if.
 
-let num1 = 2;
-let num2 = 7;
-let num3 = 9;
+// let num1 = 2;
+// let num2 = 7;
+// let num3 = 9;
 
-if(num1 % 2 == 0 || num2 % 2 == 0 || num3 % 2 == 0) {
+// if(num1 % 2 == 0 || num2 % 2 == 0 || num3 % 2 == 0) {
+//     console.log('True');
+// }else {
+//     console.log('False');
+// }
+
+// Utilize if/else para escrever um código que defina três números em variáveis e retorne true se pelo menos uma das três for ímpar. Caso contrário, o código deve retornar false.
+// Bônus: use somente um if.
+
+let num1 = 2;
+let num2 = 4;
+let num3 = 6;
+
+if(num1 % 2 != 0 || num2 % 2 != 0 || num3 % 2 != 0) {
     console.log('True');
 }else {
     console.log('False');
