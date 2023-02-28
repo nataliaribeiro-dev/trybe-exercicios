@@ -227,7 +227,7 @@ if (valorVenda > 0 && valorCusto > 0) {
 
 // Utilize if/else para escrever um código que, dado um salário bruto, calcule o líquido a ser recebido.
 
-let salBruto = 3000.00;
+let salBruto = 28000.00;
 
 let inss;
 let calculoIr;

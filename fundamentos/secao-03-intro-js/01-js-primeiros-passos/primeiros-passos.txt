@@ -1,0 +1,29 @@
+Primeiros Passos - JS
+
+Ao final do </body>:
+<script src= ''></script>
+
+ 1+'1' = 11 concatena e transforma número em string.
+ 1 - '1' = 0 - pois string não se diminui, então ele transforma a string em número;
+
+ De preferência usar const;
+ Deixar let para coisas que eu preciso mesmo mudar;
+
+typeof(variável !== do qu eu quero) {
+    mensagem de erro
+} - colocar sempre no início do IF pra que busque primeiro se há erro
+e depois executar as outras linhas de if.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
