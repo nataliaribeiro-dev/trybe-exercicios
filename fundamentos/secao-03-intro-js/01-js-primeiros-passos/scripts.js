@@ -72,6 +72,78 @@ for (index = 0; index < numbers.length; index += 1) {
 
 console.log(biggestNumber);
 
+//Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: “Nenhum valor ímpar encontrado”.
 
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let countOdd = 0;
+for (let index = 0; index < numbers.length; index += 1) {
+    if (numbers[index] % 2 === 1) {
+        countOdd += 1;
+    } else {
+        countOdd;
+    }
+}
 
+if (countOdd === 0) {
+    console.log('Nenhum valor ímpar encontrado.');
+} else {
+    console.log('Números ímpares:', countOdd);
+}
 
+//Utilizando for, descubra o menor valor contido no array e imprima-o.
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let smallestNumber = numbers[0]; //pois o maior número conhecido é o primeiro (antes da comparação);
+
+for (index = 0; index < numbers.length; index += 1) {
+    if (numbers[index] < smallestNumber) {
+        smallestNumber = numbers[index];
+    }
+}
+
+console.log(smallestNumber);
+
+//Utilizando for, crie um array que vá de 1 a 25 e imprima o resultado.
+
+let array = [];
+for (let index = 1; index <= 25; index +=1) {
+    array.push(index);
+}
+
+console.log(array);
+
+//Utilizando o array que acabou de criar, imprima o resultado da divisão de cada um dos elementos por 2.
+
+let array = [];
+
+for (let index = 1; index <= 25; index += 1) {
+    array.push(index / 2);
+}
+console.log(array);
+
+// Lógica de programação e algoritmos
+// O fatorial é a multiplicação de um número natural pelos seus antecessores, exceto o zero. Por exemplo:
+
+// O fatorial é representado pelo sinal !
+// 4! = 4 x 3 x 2 x 1 = 24
+
+// Com base nessas informações, crie um algoritmo que imprima na tela o fatorial de 10.
+
+let fatorial = 1;
+
+for(let index = 10; index > 0; index -= 1) {
+    fatorial *= index;
+}
+
+console.log(fatorial);
+
+// Utilize a estrutura de repetição for para desenvolver um algoritmo que seja capaz de inverter uma palavra, como a palavra “banana” para “ananab”. Utilize a string abaixo como exemplo. Depois, troque-a por outras para verificar se seu algoritmo está funcionando corretamente.
+
+let word = 'hello';
+let wordReverse = '';
+
+for(let index = word.length - 1; index >= 0; index -= 1) {
+    wordReverse += word[index];
+}
+
+console.log(wordReverse);
