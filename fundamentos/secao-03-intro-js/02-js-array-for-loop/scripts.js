@@ -178,3 +178,29 @@ for (index = 0; index < array.length; index += 1) {
 
 console.log(smallestWord);
 
+//Bônus - Bubble Sort
+
+let numbers = [1, 3, 2, 4, 5, 7, 6, 8, 9, 10];
+
+for (let firstIndex = 0; firstIndex < numbers.length - 1; firstIndex += 1) { //compara o primeiro número (index[0]) - percorre todo o array//
+    for (let secondIndex = 0; secondIndex < numbers.length - 1; secondIndex += 1)  //compara o segundo número [index[1]]
+        if (numbers[secondIndex] < numbers[secondIndex + 1]) { //uso o sinal de '>' para ordem crescente e '<' para ordem decrescente;
+            let temp = numbers[secondIndex]; //variável temp funciona só para armazenar o elemento//
+            numbers[secondIndex] = numbers[secondIndex + 1];
+            numbers[secondIndex + 1] = temp;
+        }
+    }
+
+console.log(numbers);
+//Referência para explicação: https://www.youtube.com/watch?v=Dv4qLJcxus8//
+
+
+//Agora, crie um novo array a partir do array numbers, sem perdê-lo. Cada valor do novo array deverá ser igual ao valor correspondente no array numbers multiplicado pelo seguinte. Por exemplo: o primeiro valor do novo array deverá ser 45, pois é a multiplicação de 5 (primeiro valor) e 9 (valor seguinte). Já o segundo valor do novo array deverá ser 27, pois é a multiplicação de 9 (segundo valor) e 3 (valor seguinte), e assim por diante. Caso não haja valor seguinte, a multiplicação deverá ser feita por 2. Faça isso utilizando o for e o método push. O resultado deve ser o array abaixo:
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let newArray = [];
+
+for (let index = 0; index < numbers.length; index += 1) {
+    newArray.push(numbers[index] * 2);
+}
+console.log(newArray);
