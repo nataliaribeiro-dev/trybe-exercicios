@@ -26,7 +26,7 @@ function cumprimentaCliente (cliente) {
 
 console.log(cumprimentaCliente('Natalia'));
 
-//Exercitando.
+//EXERCITANDO.
 
 //Adicione um valor ao saldo.
 
@@ -72,6 +72,29 @@ function valorDividido (saldo, divisor) {
 }
 
 console.log(valorDividido(100.00, 5)); //saldo = 20;
+
+//PARÂMETROS DE FUNÇÕES
+
+//Faça um programa para adicionar clientes ao array de clientes do TrybeBank. Certifique-se de que a função deve receber um parâmetro do tipo string e imprimir uma mensagem de erro caso o parâmetro não seja do tipo string.
+
+let clientesTrybeBank = ['Ada', 'John', 'Gus'];
+
+function newCustomers (clientesTrybeBank) {
+
+}
+
+//Aula Ao Vivo
+
+//Função = bloco de códigos;
+//biggestSmallestNumber = maior e menor número do array.
+//Hoinsting = possível chamar a função antes que ela seja declarada.
+
+function biggestSmallestNumber(array) {
+
+
+
+    
+}
 
 
 
