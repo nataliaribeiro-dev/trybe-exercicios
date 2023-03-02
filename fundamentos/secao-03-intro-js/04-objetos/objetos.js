@@ -226,3 +226,178 @@ console.log(student);
 
 //OBJECTS.KEYS
 
+//O Object.keys é utilizado para retornar um array que contenha as chaves de um objeto.
+
+let coolestTvShow = {
+    name: 'BoJack Horseman',
+    genre: 'adult animation',
+    createdBy: 'Raphael Bob-Waksberg',
+    favoriteCharacter: 'Princess Carolyn',
+    quote: 'Princess Carolyn always lands on her feet.',
+    seasons: 6,
+  };
+  
+  // for (let property in coolestTvShow) {
+  //   console.log(property);
+  // }
+  
+  console.log(Object.keys(coolestTvShow));
+  
+  // [ 'name', 'genre', 'createdBy', 'favoriteCharacter', 'quote', 'seasons' ]
+
+  //Tente criar uma função que exiba as habilidades do objeto student. Nesse caso, cada habilidade deve ser exibida no formato “Nome da habilidade, Nível: valor da chave referente à habilidade”. Após desenvolver a função, observe a sugestão de resposta a seguir e compare-a com sua solução.
+
+  //SUGESTÃO DE SOLUÇÃO
+  let student1 = {
+    html: 'Muito Bom',
+    css: 'Bom',
+    javascript: 'Ótimo',
+    softskills: 'Ótimo',
+  };
+  
+  let student2 = {
+    html: 'Bom',
+    css: 'Ótimo',
+    javascript: 'Ruim',
+    softskills: 'Ótimo',
+    git: 'Bom', // chave adicionada
+  };
+  
+  function listSkills(student) {
+    let arrayOfSkills = Object.keys(student);
+    for (let index in arrayOfSkills) {
+      console.log(arrayOfSkills[index] + ', Nível: ' + student[arrayOfSkills[index]]);
+    }
+  };
+  
+  console.log('Estudante 1');
+  listSkills(student1);
+  
+  console.log('Estudante 2');
+  listSkills(student2);
+
+  //Perceba que foram utilizados o método Object.keys e a estrutura de repetição for/in em conjunto. Além disso, note que a mesma função é empregada para iterar sobre os dois objetos, mesmo que o segundo tenha uma chave a mais que o outro.
+
+  //OBJECT VALUES
+
+  //Retorna valores em ym array
+
+  let coolestTvShow = {
+    name: 'BoJack Horseman',
+    genre: 'adult animation',
+    createdBy: 'Raphael Bob-Waksberg',
+    favoriteCharacter: 'Princess Carolyn',
+    quote: 'Princess Carolyn always lands on her feet.',
+    seasons: 6,
+  };
+  
+  // for (let property in coolestTvShow) {
+  //   console.log(coolestTvShow[property]);
+  // }
+  
+  console.log(Object.values(coolestTvShow));
+  
+  // [
+  //   'BoJack Horseman',
+  //   'adult animation',
+  //   'Raphael Bob-Waksberg',
+  //   'Princess Carolyn',
+  //   'Princess Carolyn always lands on her feet.'
+  //    6
+  // ]
+
+  let student = {
+    html: 'Muito Bom',
+    css: 'Bom',
+    javascript: 'Ótimo',
+    softskill: 'Ótimo',
+  };
+  
+  function listSkillsValuesWithFor(student) {
+    let skills = [];
+    for(skill in student) {
+      skills.push(student[skill]);
+    }
+  
+    return skills;
+  };
+  
+  function listSkillsValuesWithValues(student) {
+    return Object.values(student);
+  }
+  
+  // Sem Object.values
+  console.log(listSkillsValuesWithFor(student));
+  
+  // Com Object.values
+  console.log(listSkillsValuesWithValues(student));
+
+  //OBJECT.ENTRIES
+  //Retorna um array de arrays;
+
+  let coolestTvShow = {
+    name: 'BoJack Horseman',
+    genre: 'adult animation',
+    createdBy: 'Raphael Bob-Waksberg',
+    favoriteCharacter: 'Princess Carolyn',
+    quote: 'Princess Carolyn always lands on her feet.',
+    seasons: 6,
+  };
+  
+  console.log(Object.entries(coolestTvShow));
+  
+  // [
+  //   [ 'name', 'BoJack Horseman' ],
+  //   [ 'genre', 'adult animation' ],
+  //   [ 'createdBy', 'Raphael Bob-Waksberg' ],
+  //   [ 'favoriteCharacter', 'Princess Carolyn' ],
+  //   [ 'quote', 'Princess Carolyn always lands on her feet.' ],
+  //   [ 'seasons', 6 ]
+  // ]
+
+  //OBJECT.ASSIGN
+
+  //Copia valores objeto em um novo objeto;
+
+  let person = {
+    name: 'Alberto',
+    lastName: 'Gomes',
+    age: 20,
+  };
+  
+  let info = {
+    age: 23,
+    job: 'engenheiro',
+  };
+  
+  let family = {
+    children: ['Maria', 'João'],
+    wife: 'Ana',
+  };
+  
+  Object.assign(person, info, family)
+  console.log(person)
+  
+  /* Output
+    { name: 'Alberto',
+    lastName: 'Gomes',
+    age: 23,
+    job: 'engenheiro',
+    children: [ 'Maria', 'João' ],
+    wife: 'Ana'
+    } */
+
+    //pode-se passar como primeiro parâmetro do Object.assign um objeto vazio {} e armazenar seu retorno em uma nova variável. Veja como fazer isso no exemplo a seguir.
+    let person = {
+        name:'Roberto',
+      };
+      
+      let lastName = {
+        lastName: 'Silva',
+      };
+      
+      let newPerson = Object.assign({},person,lastName);
+      newPerson.name = 'Gilberto';
+      console.log(newPerson);
+      console.log(person);
+
