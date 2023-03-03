@@ -11,8 +11,8 @@
 function userInfo() {
     let userEmail = 'maria@email.com';
 
-  // Toda expressão dentro do escopo da função userInfo tem acesso à variável userEmail
-  console.log(userEmail);
+    // Toda expressão dentro do escopo da função userInfo tem acesso à variável userEmail
+    console.log(userEmail);
 }
 console.log(userInfo());
 
@@ -22,7 +22,7 @@ console.log(userInfo());
 
 //ES6 corrige estes problemas com LET e CONST
 
-const favoriteLanguage = 'Javascript'; 
+const favoriteLanguage = 'Javascript';
 favoriteLanguage = 'Python';
 console.log(favoriteLanguage); // Erro, pois const é IMUTÁVEL;
 
@@ -60,42 +60,75 @@ console.log(`Welcome ${myName}!`); //opção mais elegante ao '+' da concatenaç
 const printName = function () {
     const myName = 'Lucas';
     return myName;
-  };
-  
-  console.log(printName());
+};
 
-  //Arrow function
-  
-  const printName = () => {
+console.log(printName());
+
+//Arrow function
+
+const printName = () => {
     const myName = 'Lucas';
     return myName;
-  };
-  
-  console.log(printName());
+};
 
-  //Quando não há nada no corpo da função além do que será retornado, a sintaxe da arrow function permite simplificar ainda mais a função printName por meio da omissão do return e das chaves.
+console.log(printName());
 
-  const printName = () => 'Lucas';
-  console.log(printName());
+//Quando não há nada no corpo da função além do que será retornado, a sintaxe da arrow function permite simplificar ainda mais a função printName por meio da omissão do return e das chaves.
 
-  // quando recebe apenas um argumento, pode-se omitir os ()
+const printName = () => 'Lucas';
+console.log(printName());
 
-  const multiplyByTwo = number => number * 2; 
-  console.log(multiplyByTwo(10));  
+// quando recebe apenas um argumento, pode-se omitir os ()
 
-  const soma = (num1, num2) => num1 + num2; //com 2 parâmetros usa-se ()
-  console.log (soma(2,1));
+const multiplyByTwo = number => number * 2;
+console.log(multiplyByTwo(10));
 
-  const contaPalavras = frase => frase.split(' ').length; //1 parâmetro e sem ()
-  console.log(contaPalavras('E ai beleza ?'));
+const soma = (num1, num2) => num1 + num2; //com 2 parâmetros usa-se ()
+console.log(soma(2, 1));
 
-  //cria objetos
+const contaPalavras = frase => frase.split(' ').length; //1 parâmetro e sem ()
+console.log(contaPalavras('E ai beleza ?'));
 
-  const novoObjeto = (nome, idade) => ({nome: nome, idade: idade}); //quando se trata de objetos as chaves precisam estar assim: ({chave:valor})
-  console.log(novoObjeto('natalia', 33));
+//cria objetos
 
-
+const novoObjeto = (nome, idade) => ({ nome: nome, idade: idade }); //quando se trata de objetos as chaves precisam estar assim: ({chave:valor})
+console.log(novoObjeto('natalia', 33));
 
 
+// TERNARIO
+
+item.price >= value ? (item['isExpensive']) = 'Muito caro!' : item.isExpensive = 'Tá de boa';
+
+//LINTER - padrão de como codar
+//ESLINT - usado na trybe
+
+//PRODUTO MAIS CARO DE ACORDO COM A CATEGORIA
+
+//sobre os objetos com menu do MCDonalds
+const moreExpensive = (data, category) => {
+    let biggestPrice = data[category][0].price; //pega o primeiro valor do primeiro elemento.
+    for (let index = 1; index < data[category].length; index += 1) {
+        if (data[category][index] > biggestPrice) {
+            biggestPrice = data[category][index].price;
+        }
+    }
+    return biggestPrice;
+}
+
+console.log(moreExpensive(menu, 'bebidas'));
 
 
+//forma para cadastrar novos itens ao menu
+//procurar itens pelo nome;
+
+const checkItem = (data, category, item) => {
+    //passar por todos os elementos pra ver se ele existe? Loop
+    for (let index = 0; index < data[category].length; index += 1) {
+        if (data[category][index].name === item) {
+            return true;
+        }
+        return false;
+    }
+}
+
+    console.log(checkItem(menu, 'bebidas', 'Coca-cola 300ml'));
