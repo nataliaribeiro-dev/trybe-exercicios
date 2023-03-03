@@ -441,3 +441,49 @@ for (key in info) {
   console.log(key);
 };
 
+//Agora, defina um segundo objeto com a mesma estrutura (as mesmas chaves) do primeiro e os seguintes valores: “Tio Patinhas”, “Christmas on Bear Mountain, Dell’s Four Color Comics #178”, “O último MacPatinhas”, “Sim”. Então, imprima os valores de cada objeto juntos, de acordo com cada uma das chaves. O valor esperado no console é:
+
+let info = {
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+};
+
+let newProperty = info['recorrente'] = 'Sim';
+info.newProperty;
+
+let newInfo = Object.assign ({}, info);
+
+newInfo.personagem = 'Tio Patinhas';
+newInfo.origem = 'Tio Patinhas';
+newInfo.nota = 'Tio Patinhas';
+
+console.log(newInfo);
+
+//LEITURA DE OBJETOS
+
+// Acesse as chaves nome, sobrenome e titulo – esta encontra-se dentro da chave livrosFavoritos – e faça um console.log no seguinte formato: “O livro favorito de Julia Pessoa se chama ‘O Pior Dia de Todos’”.
+
+// Adicione um novo livro favorito na chave livrosFavoritos, que é um array. Atribua a essa chave um objeto que contenha as seguintes informações:
+
+let leitor = {
+  nome: 'Julia',
+  sobrenome: 'Pessoa',
+  idade: 21,
+  livrosFavoritos: [
+    {
+      titulo: 'O Pior Dia de Todos',
+      autor: 'Daniela Kopsch',
+      editora: 'Tordesilhas',
+    },
+  ],
+};
+
+let objectName = leitor.nome;
+let lastName = leitor.sobrenome;
+let title = leitor.livrosFavoritos[0].titulo;
+
+console.log(`O livro favorito de ${objectName} ${lastName} se chama ${title}.`);
+
+
+console.log(leitor);
