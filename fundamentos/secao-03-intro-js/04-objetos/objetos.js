@@ -401,3 +401,43 @@ let coolestTvShow = {
       console.log(newPerson);
       console.log(person);
 
+//EXERCÍCIOS
+
+//Imprima no console uma mensagem de boas-vindas para a personagem acima, na qual tenha o nome dela. Para isso, utilize a sintaxe meuObjeto.chave. Então, o valor esperado no console é:
+
+let info = {
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+};
+
+console.log(`Bem-vinda, ${info.personagem}`);
+
+//Insira no objeto uma nova propriedade com o nome de chave ‘recorrente’ e o valor ‘Sim’ e, em seguida, imprima o objeto no console. Para isso, use a sintaxe meuObjeto['chave'] = valor. Então, o valor esperado no console é:
+
+let info = {
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+};
+
+let newProperty = info['recorrente'] = 'Sim';
+info.newProperty; //acrescente nova chave:valor, através de uma variável;
+
+console.log(info);
+
+//Faça um for/in que mostre todas as chaves do objeto. O valor esperado no console é:
+
+let info = {
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+};
+
+let newProperty = info['recorrente'] = 'Sim';
+info.newProperty;
+
+for (key in info) {
+  console.log(key);
+};
+
