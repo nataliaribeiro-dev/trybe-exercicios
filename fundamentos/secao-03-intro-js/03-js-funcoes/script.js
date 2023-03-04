@@ -20,7 +20,7 @@
 
 //Função completa
 
-function cumprimentaCliente (cliente) {
+function cumprimentaCliente(cliente) {
     return 'Olá, ' + cliente + '.' + 'Essa é sua conta do TrybeBank.' //o parâmetro foi passado dentro da ação
 };
 
@@ -33,7 +33,7 @@ console.log(cumprimentaCliente('Natalia'));
 let saldo = 0;
 let novoSaldo;
 
-function sum (saldo, novoSaldo) {
+function sum(saldo, novoSaldo) {
     return novoSaldo += saldo;
 }
 
@@ -44,7 +44,7 @@ console.log(sum(0.00, 8.00)); //novoSaldo = 8;
 let saldo = 0;
 let subtraido;
 
-function subtraction (saldo, subtraido) {
+function subtraction(saldo, subtraido) {
     return saldo -= subtraido;
 }
 
@@ -55,9 +55,9 @@ console.log(subtraction(100, 50)); //Saldo = 50;
 let saldo = 0;
 let taxa;
 
-function valorTaxado (saldo, taxa) {
+function valorTaxado(saldo, taxa) {
     return saldo + (saldo * taxa);
-    
+
 }
 
 console.log(valorTaxado(100.00, 0.10)); //saldo = 110;
@@ -66,20 +66,102 @@ console.log(valorTaxado(100.00, 0.10)); //saldo = 110;
 let saldo = 0;
 let divisor;
 
-function valorDividido (saldo, divisor) {
+function valorDividido(saldo, divisor) {
     return saldo / divisor;
-    
+
 }
 
 console.log(valorDividido(100.00, 5)); //saldo = 20;
 
 //PARÂMETROS DE FUNÇÕES
 
+let clientesTrybeBank = ['Ada', 'John', 'Gus'];
+
+function cumprimentaCliente(cliente) {
+    return 'Olá, ' + cliente + '. Essa é sua conta do TrybeBank'
+}
+
+console.log(cumprimentaCliente(clientesTrybeBank)); // Olá, Ada,John,Gus. Essa é sua conta do TrybeBank
+
+//função para verificar se o usuário está logado ou deslogado;
+
+let status = 'deslogado'; // o status padrão é deslogado
+
+function logarDeslogar() { // aqui criamos uma função para verificar o status
+    if (status === 'deslogado') { // se a pessoa usuária estiver deslogada, alteramos o status para logado
+        status = 'logado';
+    } else { // caso esteja logado, alteramos para deslogado
+        status = 'deslogado';
+    }
+}
+
+console.log(status); // deslogado
+
+logarDeslogar();
+console.log(status); // logado
+
+logarDeslogar();
+console.log(status); // deslogado
+
+console.log('O usuário está ' + status + ' no sistema TrybeBank'); // O usuário está deslogado no sistema TrybeBank
+
+// Imagine que um(a) cliente do TrybeBank deseja fazer um saque de sua conta. Para isso, vai ser preciso verificar se o valor a ser sacado é maior ou igual ao saldo.
+
+function sacar(valor, saldo) {
+    if (valor >= 1 && saldo >= 0) {
+        if (valor <= saldo) {
+            return "Saque realizado com sucesso. Novo saldo: R$ " + (saldo - valor) + ",00";
+        } else {
+            return "Saldo insuficiente. Seu saldo atual é: R$ " + saldo + ",00";
+        }
+    } else {
+        return "Valor ou saldo inválido. O valor deve ser maior ou igual a 1 e saldo deve ser maior ou igual a 0.";
+    }
+}
+
+console.log(sacar(2, 20)); // Saque realizado com sucesso. Novo saldo: R$ 18,00
+console.log(sacar(2, -5)); // Valor ou saldo inválido. O valor deve ser maior ou igual a 1 e saldo deve ser maior ou igual a 0.
+console.log(sacar(2, 0)); // Saldo insuficiente. Seu saldo atual é: R$ 0,00
+
+//exemplo sorveteria
+
+let clientesCadastrados = ['Natalia', 'Laura', 'Gatão', 'Yalla'];
+let saborSorvete = ['morango', 'flocos', 'chocolate'];
+
+//pessoa está cadastrada? sabor existe?
+
+function sorveteria(nome, sabor) {
+    // let clienteValido = false;
+    // let saborValido = false;
+
+    // for (let index = 0; index < clientesCadastrados.length; index += 1) {
+    //     if (clientesCadastrados[index] === nome) {
+    //         clienteValido = true;
+    //     }
+    // };
+
+    // for (let index = 0; index < saborSorvete.length; index += 1) {
+    //     if (saborSorvete[index] === sabor) {
+    //         saborValido = true;
+    //     }
+    // };
+    
+    //MODO SIMPLIFICADO USANDO INCLUDES//    
+    if (clientesCadastrados.includes(nome) && saborSorvete.includes(sabor)) { //não precisa do true;
+        return (`${nome}, pague seu sorvete de ${sabor} no caixa.`);
+    } else {
+        return ('Cliente e/ou sabor inválido.');
+    };
+};
+
+console.log(sorveteria('Natalia', 'chocolate'));
+
+
 //Faça um programa para adicionar clientes ao array de clientes do TrybeBank. Certifique-se de que a função deve receber um parâmetro do tipo string e imprimir uma mensagem de erro caso o parâmetro não seja do tipo string.
 
 let clientesTrybeBank = ['Ada', 'John', 'Gus'];
 
-function newCustomers (clientesTrybeBank) {
+function newCustomers(clientesTrybeBank) {
 
 }
 
@@ -93,7 +175,7 @@ function biggestSmallestNumber(array) {
 
 
 
-    
+
 }
 
 
