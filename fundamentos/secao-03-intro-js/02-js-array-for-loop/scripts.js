@@ -152,17 +152,21 @@ console.log(wordReverse);
 
 
 //maior palavra
-let array = ['java', 'javascript', 'python', 'html', 'css'];
+// let array = ['java', 'javascript', 'python', 'html', 'css'];
+function maiorPalavra (array) {
+    let biggestWord = array[0];
 
-let biggestWord = array[0]; 
-
-for (index = 0; index < array.length; index += 1) {
-    if (array[index].length > biggestWord.length) {
-        biggestWord = array[index];
+    for (index = 0; index < array.length; index += 1) {
+        if (array[index].length > biggestWord.length) {
+            biggestWord = array[index];
+        }
     }
+return biggestWord;;    
+
 }
 
-console.log(biggestWord);
+console.log(maiorPalavra(['java', 'javascript', 'html']));
+
 
 //menor palavra
 
@@ -204,3 +208,4 @@ for (let index = 0; index < numbers.length; index += 1) {
     newArray.push(numbers[index] * 2);
 }
 console.log(newArray);
+
