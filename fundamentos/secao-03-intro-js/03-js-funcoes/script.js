@@ -79,25 +79,31 @@ console.log(valorDividido(100.00, 5)); //saldo = 20;
 
 let clientesTrybeBank = ['Ada', 'John', 'Gus'];
 
-function newCustomers (clientesTrybeBank) {
-
-}
-
-//Aula Ao Vivo
-
-//Função = bloco de códigos;
-//biggestSmallestNumber = maior e menor número do array.
-//Hoinsting = possível chamar a função antes que ela seja declarada.
-
-function biggestSmallestNumber(array) {
-
-
-
+function newCustomers (newName) {
+    if (typeof(newName) !== 'string') {
+        console.log('Erro!Insira uma string.');
+    }
     
+    return clientesTrybeBank.push(newName);
 }
 
+console.log(newCustomers('Laura'));
+console.log(clientesTrybeBank);
 
+//Agora iremos escrever um programa que irá excluir um(a) cliente já existente do array de clientes do TrybeBank. Certifique-se de que a função deve receber um parâmetro do tipo string e imprimir uma mensagem de erro, caso o parâmetro não seja do tipo string e caso o(a) cliente não exista dentro do array.
 
+let clientesTrybeBank = ['Ada', 'John', 'Gus'];
+
+function deleteCustomer (nameToDelete) {
+    if (typeof(nameToDelete) !== 'string') {
+        console.log('Erro!Cliente inexistente');
+    }
+    
+    return clientesTrybeBank.splice(clientesTrybeBank.indexOf(nameToDelete), 1);
+}
+
+console.log(deleteCustomer(2));
+console.log(clientesTrybeBank);
 
 
 
