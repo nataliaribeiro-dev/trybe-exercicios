@@ -10,10 +10,9 @@ for (let index = 0; index < numbers.length; index++) {
 
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
-for(let number of numbers) {
+for (let number of numbers) {
     console.log(number);
 }
-
 //Some todos os valores contidos no array e imprima o resultado.
 
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
@@ -23,7 +22,7 @@ for (let index = 0; index < numbers.length; index += 1) {
     sum += numbers[index];
 
 }
-console.log(sum); 
+console.log(sum);
 
 //Calcule e imprima a média aritmética dos valores contidos no array.
 
@@ -36,7 +35,7 @@ let average;
 
 for (let index = 0; index < numbers.length; index += 1) {
     sum += numbers[index];
-    average = sum / numbers.length;    
+    average = sum / numbers.length;
 }
 
 console.log(average); //como arredondar?
@@ -51,7 +50,7 @@ let average;
 for (let index = 0; index < numbers.length; index += 1) {
     sum += numbers[index];
     average = sum / numbers.length;
-    
+
 }
 
 if (average > 20) {
@@ -106,7 +105,7 @@ console.log(smallestNumber);
 //Utilizando for, crie um array que vá de 1 a 25 e imprima o resultado.
 
 let array = [];
-for (let index = 1; index <= 25; index +=1) {
+for (let index = 1; index <= 25; index += 1) {
     array.push(index);
 }
 
@@ -131,7 +130,7 @@ console.log(array);
 
 let fatorial = 1;
 
-for(let index = 10; index > 0; index -= 1) {
+for (let index = 10; index > 0; index -= 1) {
     fatorial *= index;
 }
 
@@ -142,7 +141,7 @@ console.log(fatorial);
 let word = 'hello';
 let wordReverse = '';
 
-for(let index = word.length - 1; index >= 0; index -= 1) {
+for (let index = word.length - 1; index >= 0; index -= 1) {
     wordReverse += word[index];
 }
 
@@ -153,7 +152,7 @@ console.log(wordReverse);
 
 //maior palavra
 // let array = ['java', 'javascript', 'python', 'html', 'css'];
-function maiorPalavra (array) {
+function maiorPalavra(array) {
     let biggestWord = array[0];
 
     for (index = 0; index < array.length; index += 1) {
@@ -161,7 +160,7 @@ function maiorPalavra (array) {
             biggestWord = array[index];
         }
     }
-return biggestWord;;    
+    return biggestWord;;
 
 }
 
@@ -172,7 +171,7 @@ console.log(maiorPalavra(['java', 'javascript', 'html']));
 
 let array = ['java', 'javascript', 'python', 'html', 'css'];
 
-let smallestWord = array[0]; 
+let smallestWord = array[0];
 
 for (index = 0; index < array.length; index += 1) {
     if (array[index].length < smallestWord.length) {
@@ -193,7 +192,7 @@ for (let firstIndex = 0; firstIndex < numbers.length - 1; firstIndex += 1) { //c
             numbers[secondIndex] = numbers[secondIndex + 1];
             numbers[secondIndex + 1] = temp;
         }
-    }
+}
 
 console.log(numbers);
 //Referência para explicação: https://www.youtube.com/watch?v=Dv4qLJcxus8//
