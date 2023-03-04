@@ -1,16 +1,107 @@
+//FOR
+
+//for(inicialização;condição de repetição(condição de parada); incremento/decremento)
+//exemplo tabuada
+let numerador = 4;
+for (let index = 1; index <= 10; index += 1) {
+    console.log(numerador * index);
+}
+
+//exemplo saudações
+
+let nomes = ['Natalia', 'Laura', 'Gatão', 'Yalla'];
+for (let index = 0; index < nomes.length; index += 1) {
+    console.log(`Olá ${nomes[index]}.`);
+};
+
+//Utilize o for para imprimir os elementos da lista groceryList com o console.log():
+
+let groceryList = ['Arroz', 'Feijão', 'Alface', 'Melancia'];
+for (let index = 0; index < groceryList.length; index += 1) {
+    console.log(groceryList[index]); //groceryList = mostra a lista 4x dentro de um array.
+    //já o groceryList[index] = mostra os elementos do array como strings um embaixo do outro.
+};
+
+//FOR OF
+
+let word = ['Hello'];
+for (let letter of word) {
+  console.log(letter);
+}
+// resultado string   //resultado dentro de um array: 'hello';
+// "H"
+// "e"
+// "l"
+// "l"
+// "o"
+
 // Percorra o array imprimindo todos os valores contidos nele com a função console.log().
 
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+//exemplo soma com for off
 
+let arrOfNumbers = [10, 20, 30];
+for (let sum of arrOfNumbers) {
+  sum += 1;
+  console.log(sum);
+}
+// 11
+// 21
+// 31
+
+//Utilize o for/of para imprimir os elementos da lista names com o console.log():
+let names = ['João', 'Maria', 'Antônio', 'Margarida'];
+
+for (let elementos of names) {
+    console.log(elementos);
+}
+
+//WHILE
+
+//Ao contrário do for, o while executa a iteração com apenas uma condição. Enquanto essa condição for verdadeira, o conteúdo de escopo do while vai sendo cumprido e, ao encontrar uma condição falsa, o bloco é encerrado. 
+
+let counter = 6;
+
+while(counter !== 12) {
+  console.log(counter += 1);
+};
+
+//ideal para quando não se sabe exatamente o numero necessário de repetições;
+let d1 = Math.ceil(Math.random() * 6);
+console.log('resultado d1:', d1);
+let d2 = Math.ceil(Math.random() * 6);
+
+while (d1 !== d2) {
+  d2 = Math.ceil(Math.random() * 6);
+  console.log('resultado d2:', d2);
+}
+
+//LÓGICA DA PROGRAMAÇÃO
+
+//Utilizando o array abaixo, percorra-o somando todos os valores. Caso o valor final seja maior que 15, imprima-o. Caso seja igual ou menor que 15, imprima a mensagem: “Valor menor que 16”:
+
+let fruits = [3, 4, 10, 1, 12]; //30
+let sum = 0;
+
+for (let index = 0; index < fruits.length; index +=1) {
+    sum += fruits[index];
+}   
+    if (sum >= 15) {
+        console.log(sum);
+    }else {
+        console.log('Valor menor que 16');
+    }
+      
+//EXERCÍCIOS - LIDANDO COM ARRAYS
+
+//Percorra o array imprimindo todos os valores contidos nele com a função console.log().
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 for (let index = 0; index < numbers.length; index++) {
     console.log(numbers[index]);
 }
-
 //Usando for of
 
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-
-for(let number of numbers) {
+for (let number of numbers) {
     console.log(number);
 }
 
@@ -21,9 +112,9 @@ let sum = 0;
 
 for (let index = 0; index < numbers.length; index += 1) {
     sum += numbers[index];
-
+    // console.log(sum); dentro do escopo de for o console mostra a soma elemento por elemento
 }
-console.log(sum); 
+console.log(sum); //fora do escopo de for vai mostrar o resultado final.
 
 //Calcule e imprima a média aritmética dos valores contidos no array.
 
@@ -33,13 +124,14 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 let sum = 0;
 let average;
+let roundNumber;
 
 for (let index = 0; index < numbers.length; index += 1) {
     sum += numbers[index];
-    average = sum / numbers.length;    
+    average = sum / numbers.length; //resultado da soma dividido pelo tamanho length total do array
+    roundNumber = Math.round(average);
 }
-
-console.log(average); //como arredondar?
+console.log(roundNumber); //como arredondar? Math.round(average)
 
 //Com base no código que acabou de gerar, faça com que: caso o valor final seja maior que 20, imprima a mensagem “Valor maior que 20”; e, caso não seja maior que 20, imprima a mensagem “Valor menor ou igual a 20”.
 
@@ -51,7 +143,7 @@ let average;
 for (let index = 0; index < numbers.length; index += 1) {
     sum += numbers[index];
     average = sum / numbers.length;
-    
+
 }
 
 if (average > 20) {
@@ -106,7 +198,7 @@ console.log(smallestNumber);
 //Utilizando for, crie um array que vá de 1 a 25 e imprima o resultado.
 
 let array = [];
-for (let index = 1; index <= 25; index +=1) {
+for (let index = 1; index <= 25; index += 1) {
     array.push(index);
 }
 
@@ -131,7 +223,7 @@ console.log(array);
 
 let fatorial = 1;
 
-for(let index = 10; index > 0; index -= 1) {
+for (let index = 10; index > 0; index -= 1) {
     fatorial *= index;
 }
 
@@ -142,7 +234,7 @@ console.log(fatorial);
 let word = 'hello';
 let wordReverse = '';
 
-for(let index = word.length - 1; index >= 0; index -= 1) {
+for (let index = word.length - 1; index >= 0; index -= 1) {
     wordReverse += word[index];
 }
 
@@ -154,7 +246,7 @@ console.log(wordReverse);
 //maior palavra
 let array = ['java', 'javascript', 'python', 'html', 'css'];
 
-let biggestWord = array[0]; 
+let biggestWord = array[0];
 
 for (index = 0; index < array.length; index += 1) {
     if (array[index].length > biggestWord.length) {
@@ -168,7 +260,7 @@ console.log(biggestWord);
 
 let array = ['java', 'javascript', 'python', 'html', 'css'];
 
-let smallestWord = array[0]; 
+let smallestWord = array[0];
 
 for (index = 0; index < array.length; index += 1) {
     if (array[index].length < smallestWord.length) {
@@ -189,7 +281,7 @@ for (let firstIndex = 0; firstIndex < numbers.length - 1; firstIndex += 1) { //c
             numbers[secondIndex] = numbers[secondIndex + 1];
             numbers[secondIndex + 1] = temp;
         }
-    }
+}
 
 console.log(numbers);
 //Referência para explicação: https://www.youtube.com/watch?v=Dv4qLJcxus8//
