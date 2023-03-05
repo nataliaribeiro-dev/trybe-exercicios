@@ -548,3 +548,83 @@ console.log(leitor);
 //Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato: “Julia tem <quantidade> livros favoritos”, em que “<quantidade>” corresponde à quantidade de livros favoritos e é um número gerado automaticamente por seu código.
 
 console.log(leitor.nome + ' tem ' + leitor.livrosFavoritos.length + ' livros favoritos.');
+
+//EXERCÍCIO PEDIDO DE CLIENTES
+
+//Imagine que você seja responsável por cuidar do sistema de entrega de um restaurante e que precise enviar mensagens com as informações da compra. Para isso, use o seguinte código:
+
+let order = {
+  name: 'Rafael Andrade',
+  phoneNumber: '11-98763-1416',
+  address: {
+    street: 'Rua das Flores',
+    number: '389',
+    apartment: '701',
+  },
+  order: {
+    pizza: {
+      marguerita: {
+        amount: 1,
+        price: 25,
+      },
+      pepperoni: {
+        amount: 1,
+        price: 20,
+      },
+    },
+    drinks: {
+      coke: {
+        type: 'Coca-Cola Zero',
+        price: 10,
+        amount: 1,
+      },
+    },
+    delivery: {
+      deliveryPerson: 'Ana Silveira',
+      price: 5,
+    },
+  },
+  payment: {
+    total: 60,
+  },
+};
+
+
+//Complete a função customerInfo() para que seu retorno seja similar a 'Olá, Ana Silveira, entrega para: Rafael Andrade, Telefone: 11-98763-1416, R. Rua das Flores, Nº: 389, AP: 701'.
+
+function customerInfo(order) {
+  // console.log(`Olá, ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, Telefone: ${order['phoneNumber']}, R. ${order.address['street']}, N° ${order.address['number']}, AP: ${order.address['apartment']}.`);
+  //OU
+
+  function customerInfo(order) {
+    let address = 'address'; // Armazene a palavra 'address' em uma variável.
+    let deliveryPerson = order.order.delivery.deliveryPerson; // Acesse e armazene o valor da chave `deliveryPerson` em uma variável através de 'notação de ponto'.
+    let customerName = order['name']; // Acesse e armazene o valor da chave `name` em uma variável através de 'notação de colchetes'.
+    let customerPhone = order['phoneNumber']; // Acesse e armazene o valor da chave `phoneNumber` em uma variável através de 'notação de colchetes'.
+    let street = order[address].street; // Acesse e armazene o valor da chave `street` em uma variável através de 'notação de colchetes' e 'notação de ponto'.
+    let number = order[address].number; // Acesse e armazene o valor da chave `number` em uma variável através de 'notação de colchetes' e 'notação de ponto'.
+    let apartment = order[address].apartment; // Acesse e armazene o valor da chave `apartment` em uma variável através de 'notação de colchetes' e 'notação de ponto'.
+  
+    console.log(`Olá ${deliveryPerson}, entrega para: ${customerName}, Telefone: ${customerPhone}, R. ${street}, Nº: ${number}, AP: ${apartment}`);
+  }
+  
+  customerInfo(order);
+}
+
+customerInfo(order);
+
+//Complete a função orderModifier() para que seu retorno seja similar a 'Olá, Luiz Silva, o valor total de seu pedido de marguerita, pepperoni e Coca-Cola Zero é R$ 50,00.';
+// Modifique o nome da pessoa compradora para Luiz Silva;
+// Modifique o valor total da compra para R$ 50,00.
+
+function orderModifier(order) {
+  let newBuyer = order.name = 'Luiz Silva';
+  let newTotal = order.payment.total = '50';
+  let pizzas = Object.keys(order.order.pizza);
+  let drinks = order.order.drinks.coke.type;
+
+  console.log('Olá ' + newBuyer + ', o total do seu pedido de ' + pizzas[0] + ', ' + pizzas[1] + ' e ' + drinks + ' é R$ ' + newTotal + ',00.'); // Exiba a mensagem desejada
+}
+
+orderModifier(order);
+
