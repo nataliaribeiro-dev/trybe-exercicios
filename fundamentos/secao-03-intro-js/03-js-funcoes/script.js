@@ -171,30 +171,81 @@ newCustomers('Natalia');
 
 let clientesTrybeBank = ['Ada', 'John', 'Gus'];
 
-function removeCliente(cliente) {
-  
-  if (typeof cliente === 'string') {
-    let clienteEncontrado = false;
+function validaCliente(cliente) {
+    if (typeof cliente !== 'string') {
+        return 'Parâmetro passado deve ser uma string';
+    } else {
+        return true;
+    };
+};
+
+function clienteIndex(cliente) {
     for (let index = 0; index < clientesTrybeBank.length; index += 1) {
-      if (cliente === clientesTrybeBank[index]) {
-        clientesTrybeBank.splice(index, 1);
-        clienteEncontrado = true;
-        return 'Cliente excluída(o) com sucesso.';
-      }
+        if (cliente === clientesTrybeBank[index]) {
+            return index;
+        };
+    };
+    return false;
+};
+
+function removeCliente(cliente) {
+    let validacao = validaCliente(cliente);
+    if (validacao !== true) {
+        return validacao;
+    };
+
+    let index = clienteIndex(cliente);
+    if (index === false) {
+        return 'Cliente não encontrada(o)';
     }
 
-    if (clienteEncontrado === false) {
-      return 'Cliente não encontrada(o)'
-    }
-  } else {
-    return 'O parâmetro passado deve ser do tipo "string"!';
-  }
+    clientesTrybeBank.splice(index, 1);
+    return 'Cliente excluída(o) com sucesso.';
 };
 
 console.log(removeCliente(false)); // O parâmetro passado deve ser do tipo "string"!
 console.log(removeCliente('Barney')); // Cliente não encontrada(o)
 console.log(removeCliente('John')); // Cliente excluída(o) com sucesso.
 console.log(clientesTrybeBank); // [ 'Ada', 'Gus' ]
+
+//COMPLEXIDADE DE FUNÇÕES
+
+//COMPLEXIDADE CICLOMÁTICA: A complexidade ciclomática é a quantidade de “caminhos” independentes que um sistema pode seguir.
+//Quanto mais estruturas de decisão maior a complexidade de um sistema, o que certamente gerará altos custos de manutenção, muitas vezes impossibilitando a cobertura de testes de um software.
+//De acordo com o artigo original de MacCabe, esta complexidade não deveria passar de 10.
+
+//FUNÇÃO SACAR REFATORADA - EVITAR UMA FUNÇÃO QUE FAÇA MUITAS COISAS, COM IFs ANINHADOS...
+
+function validaParametros(valor, saldo) {
+    if (valor >= 1 && saldo >= 0) {
+        return true;
+    } else {
+        return false;
+    };
+};
+
+function verificaSaldo(valor, saldo) {
+    if (valor <= saldo) {
+        return true;
+    } else {
+        return false;
+    };
+};
+
+function sacar(valor, saldo) {
+    if (validaParametros(valor, saldo) === false) {
+        return "Valor ou saldo inválido. O valor deve ser maior ou igual a 1 e saldo deve ser maior ou igual a 0.";
+    };
+
+    if (verificaSaldo(valor, saldo) === true) {
+        return "Saque realizado com sucesso. Novo saldo: R$" + (saldo - valor);
+    } else {
+        return "Saldo insuficiente. Seu saldo atual é: " + saldo;
+    };
+};
+
+console.log(sacar(3.00, 5.00));
+//FUNÇÃO SORVETERIA REFATORADA - CADA TAREFA EM UMA FUNÇÃO
 
 
 
