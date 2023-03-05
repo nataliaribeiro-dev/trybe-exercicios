@@ -271,12 +271,11 @@ let coolestTvShow = {
     seasons: 6,
   };
   
-  // for (let property in coolestTvShow) {
-  //   console.log(property);
+  // for (let key in coolestTvShow) {
+  //   console.log(key);
   // }
   
-  console.log(Object.keys(coolestTvShow));
-  
+  console.log(Object.keys(coolestTvShow)); //mostra as chaves dentro de um array;
   // [ 'name', 'genre', 'createdBy', 'favoriteCharacter', 'quote', 'seasons' ]
 
   //Tente criar uma função que exiba as habilidades do objeto student. Nesse caso, cada habilidade deve ser exibida no formato “Nome da habilidade, Nível: valor da chave referente à habilidade”. Após desenvolver a função, observe a sugestão de resposta a seguir e compare-a com sua solução.
@@ -314,7 +313,7 @@ let coolestTvShow = {
 
   //OBJECT VALUES
 
-  //Retorna valores em ym array
+  //Retorna valores em um array
 
   let coolestTvShow = {
     name: 'BoJack Horseman',
@@ -347,23 +346,9 @@ let coolestTvShow = {
     softskill: 'Ótimo',
   };
   
-  function listSkillsValuesWithFor(student) {
-    let skills = [];
-    for(skill in student) {
-      skills.push(student[skill]);
-    }
-  
-    return skills;
-  };
-  
   function listSkillsValuesWithValues(student) {
     return Object.values(student);
-  }
-  
-  // Sem Object.values
-  console.log(listSkillsValuesWithFor(student));
-  
-  // Com Object.values
+  };
   console.log(listSkillsValuesWithValues(student));
 
   //OBJECT.ENTRIES
@@ -456,7 +441,7 @@ let info = {
 };
 
 let newProperty = info['recorrente'] = 'Sim';
-info.newProperty; //acrescente nova chave:valor, através de uma variável;
+// info.newProperty; //acrescente nova chave:valor, através de uma variável;
 
 console.log(info);
 
@@ -468,12 +453,16 @@ let info = {
   nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
 };
 
-let newProperty = info['recorrente'] = 'Sim';
-info.newProperty;
+let newProperty = info['recorrente'] = 'Sim'; //acrescenta através de uma variável declarada;
 
+console.log(info);
+//mostra chaves
 for (key in info) {
   console.log(key);
-};
+}
+//mostra array das chaves
+let keys = Object.keys(info);
+console.log(keys);
 
 //Agora, defina um segundo objeto com a mesma estrutura (as mesmas chaves) do primeiro e os seguintes valores: “Tio Patinhas”, “Christmas on Bear Mountain, Dell’s Four Color Comics #178”, “O último MacPatinhas”, “Sim”. Então, imprima os valores de cada objeto juntos, de acordo com cada uma das chaves. O valor esperado no console é:
 
@@ -481,18 +470,27 @@ let info = {
   personagem: 'Margarida',
   origem: 'Pato Donald',
   nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+  recorrente: 'sim';
 };
 
-let newProperty = info['recorrente'] = 'Sim';
-info.newProperty;
+let info2 = {
+  personagem: 'Tio Patinhas',
+  origem: 'Christmas on Bear Mountain, Dell"s Four Color Comics #178',
+  nota: 'O último MacPatinhas',
+  recorrente: 'Sim',
+};
 
-let newInfo = Object.assign ({}, info);
-
-newInfo.personagem = 'Tio Patinhas';
-newInfo.origem = 'Tio Patinhas';
-newInfo.nota = 'Tio Patinhas';
-
-console.log(newInfo);
+for (let key in info) {
+  if (
+    key === 'recorrente' &&
+    info[key] === 'Sim' &&
+    info2[key] === 'Sim'
+  ) {
+    console.log('Ambos recorrentes');
+  } else {
+    console.log(info[key] + ' e ' + info2[key]);
+  }
+}
 
 //LEITURA DE OBJETOS
 
@@ -519,5 +517,34 @@ let title = leitor.livrosFavoritos[0].titulo;
 
 console.log(`O livro favorito de ${objectName} ${lastName} se chama ${title}.`);
 
+//Adicione um novo livro favorito na chave livrosFavoritos, que é um array. Atribua a essa chave um objeto que contenha as seguintes informações:
 
+let leitor = {
+  nome: 'Julia',
+  sobrenome: 'Pessoa',
+  idade: 21,
+  livrosFavoritos: [
+    {
+      titulo: 'O Pior Dia de Todos',
+      autor: 'Daniela Kopsch',
+      editora: 'Tordesilhas',
+    },
+  ],
+};
+
+let newProperty = {
+  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+  autor: 'JK Rowling',
+  editora: 'Rocco',
+};
+
+function addNewProperty (variable) {
+    leitor.livrosFavoritos.push(variable);
+};
+
+addNewProperty(newProperty);
 console.log(leitor);
+
+//Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato: “Julia tem <quantidade> livros favoritos”, em que “<quantidade>” corresponde à quantidade de livros favoritos e é um número gerado automaticamente por seu código.
+
+console.log(leitor.nome + ' tem ' + leitor.livrosFavoritos.length + ' livros favoritos.');
