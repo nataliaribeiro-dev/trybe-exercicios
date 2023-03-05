@@ -145,7 +145,7 @@ function sorveteria(nome, sabor) {
     //         saborValido = true;
     //     }
     // };
-    
+
     //MODO SIMPLIFICADO USANDO INCLUDES//    
     if (clientesCadastrados.includes(nome) && saborSorvete.includes(sabor)) { //não precisa do true;
         return (`${nome}, pague seu sorvete de ${sabor} no caixa.`);
@@ -161,27 +161,40 @@ console.log(sorveteria('Natalia', 'chocolate'));
 
 let clientesTrybeBank = ['Ada', 'John', 'Gus'];
 
-function newCustomers(clientesTrybeBank) {
-
+function newCustomers(novoCliente) {
+    clientesTrybeBank.push(novoCliente);
+    return console.log(clientesTrybeBank);
 }
+newCustomers('Natalia');
 
-//Aula Ao Vivo
+//Agora iremos escrever um programa que irá excluir um(a) cliente já existente do array de clientes do TrybeBank. Certifique-se de que a função deve receber um parâmetro do tipo string e imprimir uma mensagem de erro, caso o parâmetro não seja do tipo string e caso o(a) cliente não exista dentro do array.
 
-//Função = bloco de códigos;
-//biggestSmallestNumber = maior e menor número do array.
-//Hoinsting = possível chamar a função antes que ela seja declarada.
+let clientesTrybeBank = ['Ada', 'John', 'Gus'];
 
-function biggestSmallestNumber(array) {
+function removeCliente(cliente) {
+  
+  if (typeof cliente === 'string') {
+    let clienteEncontrado = false;
+    for (let index = 0; index < clientesTrybeBank.length; index += 1) {
+      if (cliente === clientesTrybeBank[index]) {
+        clientesTrybeBank.splice(index, 1);
+        clienteEncontrado = true;
+        return 'Cliente excluída(o) com sucesso.';
+      }
+    }
 
+    if (clienteEncontrado === false) {
+      return 'Cliente não encontrada(o)'
+    }
+  } else {
+    return 'O parâmetro passado deve ser do tipo "string"!';
+  }
+};
 
-
-
-}
-
-
-
-
-
+console.log(removeCliente(false)); // O parâmetro passado deve ser do tipo "string"!
+console.log(removeCliente('Barney')); // Cliente não encontrada(o)
+console.log(removeCliente('John')); // Cliente excluída(o) com sucesso.
+console.log(clientesTrybeBank); // [ 'Ada', 'Gus' ]
 
 
 
