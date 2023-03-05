@@ -123,7 +123,7 @@ let player = {
     },
 };
 
-console.log(typeof(player));
+console.table(player);
 
 // Acesse as chaves name, lastName e age por meio da sintaxe meuObjeto.chave e concatene as informações para imprimir no console uma mensagem no seguinte formato: “A jogadora Marta Silva tem 34 anos de idade”.
 
@@ -135,21 +135,21 @@ console.log(player);
 
 //Acesse a chave bestInTheWorld por meio da sintaxe meuObjeto['chave'] e faça um console.log no seguinte formato: “A jogadora Marta Silva foi eleita a melhor do mundo por 6 vezes”.
 
-console.log(`A jogadora ${player.name} ${player.lastName} foi eleita a melhor do mundo por 6 vezes.`);
+console.log(`A jogadora ${player.name} ${player.lastName} foi eleita a melhor do mundo por ${bestInTheWorld.length} vezes.`);
 
 // Acesse a chave medals por meio da sintaxe meuObjeto.chave e faça um console.log no seguinte formato: “A jogadora possui 2 medalhas de ouro e 3 medalhas de prata”.
 
 console.log(`A jogadora possui ${player.medals.golden} de ouro e ${player.medals.silver} medalhas de prata.`);
 
-// FOR IN - retorna indices;
+// FOR IN - retorna indices - keys;
 
 let pizzas = {
     sabor: 'Palmito',
     preco: '30.90',
     borda: true
 };
-
-for (let key in pizzas) {
+//contexto objetos
+for (let key in pizzas) { //key para índice in pizzas para o objeto a ser varrido;
     console.log(key);
 } //executa as chaves (key) do objeto(pizzas): sabor, praco, borda
 
@@ -157,13 +157,20 @@ console.log(pizzas.preco); //mostra apenas o preço
 
 console.log(pizzas['borda']); //mostra a borda
 
+//contexto de arrays
 let pizzasDoces = ['chocolate', 'banana', 'morango'];
 
 for(let key in pizzasDoces) {
     console.log(key, pizzasDoces[key]);
 }
 
-//FOR/OF - percorre valores
+let cars = ['Saab', 'Volvo', 'BMW'];
+
+for (let index in cars) {
+  console.log(index, cars[index]); //apenas index: mostra; 0 1 2; apenas cars: conteúdo do array 3x; index, cars[index]: 0 Saab e etc...
+}
+
+//FOR/OF - o for/of percorre os valores dos objetos iteráveis através dos respectivos valores, e não dos índices como o for/in;
 
 let food = ['hambúrguer', 'bife', 'acarajé'];
 for (let value of food) {
@@ -181,8 +188,8 @@ let names = {
     person3: 'Jorge',
   };
 
-for(let value in names) { 
-    console.log('Olá', names[value]);
+for(let index in names) { 
+    console.log('Olá', names[index]);
 }
 // Olá João
 // Olá Maria
@@ -197,32 +204,59 @@ let car = {
   };
 
 for(key in car) {
-    console.log(key, car[key]);
+    console.log(key + ': ' + car[key]);
 }
+// model: A3 Sedan
+// manufacturer: Audi
+// year: 2020
 
-//MANIPULANDO OBJETOS
+//MANIPULANDO OBJETOS -ADICIONANDO NOVAS CHAVES
 
 //sintaxe: objeto.novaPropriedade = 'valor';
 
-//Adicione suas informações ao objeto student = {}, como nome, e-mail, telefone, GitHub e LinkedIn, usando os métodos abordados no conteúdo.
+let customer = {
+  firstName: 'Roberto',
+  age: 22,
+  job: 'Teacher',
+};
+customer.lastName = 'Sica';
+console.log(customer);
 
-let student = {
+//função para adicionar chaves e valores a um objeto de forma dinâmica
 
+let customer = {
+  firstName: 'Roberto',
+  age: 22,
+  job: 'Teacher',
 };
 
+let newKey = 'lastName';
+let lastName = 'Ferreira';
+
+function addProperty(object, key, value) {
+  object[key] = value;
+};
+
+console.log(addProperty(customer, newKey, lastName)); //assim poderia citar e alterar qualquer objeto.
+console.log(customer);
+
+//Adicione suas informações ao objeto student = {}, como nome, e-mail, telefone, GitHub e LinkedIn, usando os métodos abordados no conteúdo.
+
+let student = {};
+
 let newKey = 'nome';
-let newValue;
+let newValue = 'Natália';
 
 function addProperty (object, key, value) { //function que automatiza o adicionar novas chaves e valores a uma propriedade
     object[key] = value; 
 };
 
-(addProperty(student, newKey, 'natalia')); //pra deixar mais limpo, posso criar variáveis e atribuir o valor a elas.
-(addProperty(student, 'e-mail', 'natilgr@hotmail.com'));
-(addProperty(student, 'github', '@natalia-dev'));
-(addProperty(student, 'linkedin', 'https://www.linkedin.com/in/dev-natalia-ribeiro/'));
 console.log(student);
+addProperty(student, 'sobrenome', 'Ribeiro')
+addProperty(student, 'e-mail', 'natilgr@hotmail.com');
+addProperty(student, 'telefone', 51992075245);
 
+console.log(student);
 
 //OBJECTS.KEYS
 
