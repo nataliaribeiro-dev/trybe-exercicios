@@ -216,3 +216,212 @@ let speed = 90;
 const speedCar = (speed) => (speed >= 120 ? `Você ultrapassou o limite de velocidade` : `Você está na velocidade permitida.`);
 
 console.log(speedCar(speed));
+
+//EXERCÍCIOS BÔNUS - ORGANIZANDO LIÇÕES
+
+//Suponha que você esteja trabalhando em uma escola e precise fazer algumas atualizações no sistema. Para isso, considere o seguinte código:
+
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+let lesson2 = {
+    materia: 'História',
+    numeroEstudantes: 20,
+    professor: 'Carlos',
+};
+
+let lesson3 = {
+    materia: 'Matemática',
+    numeroEstudantes: 10,
+    professor: 'Maria Clara',
+    turno: 'noite',
+};
+
+//Crie uma função para adicionar o turno da noite na lesson2. Essa função deve ter três parâmetros: o objeto a ser modificado, a chave a ser adicionada e o valor dela.
+let newProperty;
+function addProperty(object, key, value) {
+    newProperty = object[key] = value;
+    return newProperty;
+}
+console.log(addProperty(lesson2, 'turno', 'noite'));
+console.log(lesson2);
+
+//Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
+function listOfKeys(object) {
+    for (key in lesson1) {
+        console.log(key);
+    }
+};
+
+(listOfKeys(lesson1));
+
+//ou
+
+function listKeys(obj) {
+    return Object.keys(obj);
+    // O método "Object.keys()" faz essa listagem ao passar o objeto que se deseja referenciar como parâmetro.
+}
+
+console.log(listKeys(lesson1));
+
+//Crie uma função para mostrar o tamanho de um objeto. Essa função deve receber um objeto como parâmetro.
+
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+function objectSize(object) {
+
+    return console.log(Object.keys(lesson1).length);
+
+};
+(objectSize(lesson1));
+
+//Crie uma função para retornar os valores de um objeto em um array. Essa função deve receber um objeto como parâmetro.
+
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+function objectValue(object) {
+    return Object.values(object);
+};
+
+console.log(objectValue(lesson1));
+
+//Crie um objeto de nome allLessons, que deve agrupar todas as aulas por meio do Object.assign.
+
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+let lesson2 = {
+    materia: 'História',
+    numeroEstudantes: 20,
+    professor: 'Carlos',
+};
+
+let lesson3 = {
+    materia: 'Matemática',
+    numeroEstudantes: 10,
+    professor: 'Maria Clara',
+    turno: 'noite',
+};
+
+// O método "Object.assign()" recebe dois parâmetros: um objeto e o que se quer atribuir à ele. Se no primeiro parâmetro for passado um objeto vazio, ele criará um objeto novo com as caraterísticas do segundo parâmetro.
+const allLessons = Object.assign({}, { lesson1: lesson1, lesson2: lesson2, lesson3: lesson3 });
+
+console.log(allLessons);
+
+//Crie uma função que retorne o número total de estudantes em todas as aulas.
+
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+let lesson2 = {
+    materia: 'História',
+    numeroEstudantes: 20,
+    professor: 'Carlos',
+};
+
+let lesson3 = {
+    materia: 'Matemática',
+    numeroEstudantes: 10,
+    professor: 'Maria Clara',
+    turno: 'noite',
+};
+
+let totalStudents;
+function numberOfStudents(obj1, obj2, obj3) {
+    totalStudents = obj1.numeroEstudantes + obj2.numeroEstudantes + obj3.numeroEstudantes;
+    console.log(`O total de estudantes é: ${totalStudents}`);
+}
+
+numberOfStudents(lesson1, lesson2, lesson3);
+
+//Solução alternativa
+
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+let lesson2 = {
+    materia: 'História',
+    numeroEstudantes: 20,
+    professor: 'Carlos',
+};
+
+let lesson3 = {
+    materia: 'Matemática',
+    numeroEstudantes: 10,
+    professor: 'Maria Clara',
+    turno: 'noite',
+};
+
+const allLessons = Object.assign({}, { lesson1: lesson1, lesson2: lesson2, lesson3: lesson3 });
+
+function getNumberOfStudents(obj) {
+    let total = 0;
+
+    let keys = Object.keys(obj);
+
+    for (index in keys) {
+        total += obj[keys[index]].numeroEstudantes; // incrementa a variável total a cada iteração
+    }
+    return total; // a função retorna o total de estudantes após as iterações do "for/in"
+}
+console.log(getNumberOfStudents(allLessons));
+
+//Crie uma função que obtenha o valor da chave de acordo com sua posição no objeto.
+
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+function valueByIndex(obj, index) {
+    return Object.values(obj)[index];
+};
+
+console.log(valueByIndex(lesson1, 3));
+
+//Crie uma função que verifique se o par chave/valor existe na função. Essa função deve ter três parâmetros: o objeto, o nome da chave e o valor dela.
+let lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
+};
+
+function verifyPair(obj, key, value) {
+    let entries = Object.entries(obj);
+    let isEqual = false;
+    for (let index in entries) {
+        if (entries[index][0] === key && entries[index][1] === value) isEqual = true;
+    }
+    return isEqual;
+}
+console.log(verifyPair(lesson1, 'professor', 'Maria Clara'));
+
