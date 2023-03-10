@@ -14,4 +14,18 @@ A função (criada por você) que será executada quando o evento acontecer. Ela
 
 Anota aí 📝: Você pode passar um parâmetro para a sua função que vai permitir acessar diversos atributos do evento, como o target, que é o elemento-alvo em que o evento ocorre. Por exemplo, caso você queira capturar o valor digitado em um input, você pode usar da seguinte maneira: event.target.value.
 
-Lista de events: https://www.w3schools.com/jsref/dom_obj_event.asp
+Lista de events: https://www.w3schools.com/jsref/dom_obj_event.
+
+window.onload = garante que o conteúdo seja carregado após que a página for carregada;
+Garante assincronicidade;
+
+PROGRAMAÇÃO ORIENTADA A EVENTOS
+
+elemento.addEventListener('ação', nome da função sem ()); a função pode ser escrita dentro do parenteses ou posso só chamar a função construída previamente.
+
+event.target !importante!
+
+window.innerWidth; mostra largura da tela;
+window.innerHeigth; mostra altura da tela;
+
+
