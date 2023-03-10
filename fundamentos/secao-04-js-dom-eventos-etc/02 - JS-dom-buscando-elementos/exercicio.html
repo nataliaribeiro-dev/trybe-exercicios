@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    
+    <script>
+       //Cria h1 no body//     
+       const newH1 = document.createElement('h1');
+       newH1.innerHTML = 'TrybeTrip - Agência de Viagens';
+       document.body.appendChild(newH1);
+    
+       //Adicione a tag main com a classe main-content como filho da tag body//
+       const pai = document.getElementsByTagName('body')[0]; // captura
+       const addMain = document.createElement('main');//cria
+       addMain.className = 'main-content';
+       pai.appendChild(addMain); //se adicionar document. não vai funcionar. //costura
+    
+       //Adicione a tag section com a classe center-content como filho da tag main criada no passo 2//
+       const main = document.getElementsByClassName('main-content')[0]; // captura
+       const addSection = document.createElement('section');//cria
+       addSection.className = 'center-content';
+       main.appendChild(addSection); //costura;
+       
+       //Adicione a tag p como filho do section criado no passo 3 e coloque algum texto//
+       const section = document.getElementsByClassName('center-content')[0]; // captura
+       const addParagraph = document.createElement('p');//cria
+       addParagraph.innerText = 'Viajar é bom demais!';
+       section.appendChild(addParagraph); //costura;
+
+       //Adicione a tag section com a classe left-content como filho da tag main criada no passo 2//
+       const addSection2 = document.createElement('section');
+       addSection2.className = 'left-content';
+       main.appendChild(addSection2); //reaproveitei a captura da main no passo 2;
+
+       //Adicione a tag section com a classe right-content como filho da tag main criada no passo 2//
+       const addSection3 = document.createElement('section');
+       addSection3.className = 'right-content';
+       main.appendChild(addSection3); //reaproveitei a captura da main no passo 2;
+
+       //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do section criado no passo 5//
+       const img = document.createElement('img');
+       img.className = 'small-image';
+       img.src = 'https://picsum.photos/200';
+       img.alt = 'random images';
+       img.style.border = '4px solid white';
+       addSection2.appendChild(img); 
+
+       //Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, … como valores da lista. Essa lista deve ser filha do section criado no passo 6//
+      const elementUl = document.createElement('ul');
+      addSection3.appendChild(elementUl);
+        
+      const numbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis',
+      'Sete', 'Oito', 'Nove', 'Dez'];
+
+       for (let index = 0; index < numbers.length; index += 1) {
+         const list = numbers[index];
+         const createLi = document.createElement('li');
+         createLi.textContent = list;
+         elementUl.appendChild(createLi);
+       };
+
+    //Adicione 3 tags h3, todas sendo filhas do main criado no passo 2//
+     for(let index = 0; index < 3; index += 1) {
+      const h3 = index;
+      const addH3 = document.createElement('h3');
+      addMain.appendChild(addH3);
+    };
+           
+
+      
+
+
+
+
+
+
+   
+    </script>
+  
+  </body>
+</html>
