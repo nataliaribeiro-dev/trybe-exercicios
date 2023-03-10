@@ -1,0 +1,17 @@
+EVENTOS EM JS
+
+Praticamente qualquer interação da pessoa usuária com a página pode ser considerada um evento: o rolar da tela, o passar do mouse por um elemento, o click do mouse, o digitar do teclado, entre outros.
+
+Os EventListeners ficam esperando que algo aconteça(click, mouseover, change), pra que quando isso aconteça ele dispare a ação de uma função pré-definida;
+
+O código mais comum para criar um escutador de eventos em um elemento é através de uma função nativa do JavaScript, chamada addEventListener. Funções nativas são funções que já existem prontas dentro da linguagem e, como toda função, podem receber parâmetros.
+
+No seu uso mais comum, addEventListener recebe dois parâmetros:
+
+O evento que estamos esperando escutar: Exemplos: click, change, mouseover etc.;
+
+A função (criada por você) que será executada quando o evento acontecer. Ela pode receber um parâmetro de evento.
+
+Anota aí 📝: Você pode passar um parâmetro para a sua função que vai permitir acessar diversos atributos do evento, como o target, que é o elemento-alvo em que o evento ocorre. Por exemplo, caso você queira capturar o valor digitado em um input, você pode usar da seguinte maneira: event.target.value.
+
+Lista de events: https://www.w3schools.com/jsref/dom_obj_event.asp
