@@ -6,16 +6,33 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding: 20px;
     border: 1px solid green;
   }
   .options {
     display: flex;
     flex-direction: column;
+    padding: 2px;
+
   }
+
+  span {
+    margin: 4px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+
+  button {
+    margin: 3px;
+    background-color:gray;
+  }
+
   .title {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 40px;
   }
   .description {
     display: flex;
